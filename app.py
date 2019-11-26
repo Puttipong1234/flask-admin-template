@@ -1,4 +1,4 @@
-from flask import Flask , render_template , request
+from flask import Flask , render_template , request , redirect , url_for
 
 app = Flask(__name__)
 
@@ -11,10 +11,17 @@ def table():
 def index():
     return render_template('index.html')
 
-@app.route('/api/sendmail/<userid>')
-def sending(userid):
+@app.route('/api/sendmail' , methods=["POST"])
+def sending():
     req = request.form
     print(req)
+    return redirect(url_for('table'))
+
+@app.route('/api/not_approve' , methods=["POST"])
+def reject():
+    req = request.form
+    print(req)
+    return redirect(url_for('table'))
 
 if __name__ == '__main__':
     app.run(debug=True)
