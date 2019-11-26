@@ -117,6 +117,21 @@ var myLineChart = new Chart(ctx, {
   }
 });
 
+// ajax to be call as a function and return value
+// function isSession(selector) {
+//   $.ajax({
+//       type: "POST",
+//       url: '/order.html',
+//       data: ({ issession : 1, selector: selector }),
+//       dataType: "html",
+//       success: function(data) {
+//           return data;
+//       },
+//       error: function() {
+//           alert('Error occured');
+//       }
+//   });
+// }
 
 // ajax data from here
 
