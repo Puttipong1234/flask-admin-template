@@ -3,13 +3,13 @@ from flask import Flask , render_template , request , redirect , url_for
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/dashboard')
 def table():
     return render_template('tables.html')
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 @app.route('/api/sendmail' , methods=["POST"])
 def sending():
@@ -22,6 +22,7 @@ def reject():
     req = request.form
     print(req)
     return redirect(url_for('table'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
